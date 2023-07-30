@@ -1,0 +1,27 @@
+.button {
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease-out;
+    transition-property: background-color, border-color, color;
+    background-color: #ff5f00;
+    border: 1px solid #ff5f00;
+    display: inline-block;
+    -webkit-appearance: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 13px 15px;
+    margin: 0;
+    font-size: 1.125rem;
+    width: fit-content;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.button:focus-visible {
+    outline: 2px auto #5b8ad6;
+}

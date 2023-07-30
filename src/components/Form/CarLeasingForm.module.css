@@ -1,0 +1,296 @@
+.field {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.formHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formHeader span {
+    font-size: 0.75rem;
+}
+
+.root {
+    max-width: 640px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+input:focus-visible {
+    outline: 2px auto #5b8ad6;
+}
+
+.input,
+textarea {
+    border: 1px solid #bcd8db;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #512b2b;
+    background-color: #fff;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 13px 10px 13px 10px;
+    height: 46px;
+    line-height: 18px;
+    font-family: RobotoRegular, Helvetica, Arial, sans-serif;
+    font-size: 0.9375rem;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+}
+
+.input:focus-visible {
+    outline: 2px auto #5b8ad6;
+}
+
+.field label {
+    color: #896f6f;
+    line-height: 1.125rem;
+    font-size: 0.9375rem;
+}
+
+h1 {
+    color: #fb4f00;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.actions {
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.nextButtonWrapper {
+    text-align: end;
+    grid-column: 2;
+}
+
+.error {
+    background-color: #f9ded3;
+    border: 1px solid #e2898d;
+    border-radius: 0;
+    display: block;
+    line-height: 1.125rem;
+    margin: 10px 0 0;
+    min-height: 20px;
+    padding: 9px 30px 9px 55px;
+    position: relative;
+    font-size: 0.9375rem;
+}
+
+.error:before {
+    border-radius: 0 47% 47% 0;
+    content: '';
+    height: 100%;
+    left: -1px;
+    top: 0;
+    position: absolute;
+    width: 41px;
+    background-color: #c5131c;
+}
+
+.errorIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    bottom: 50%;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.errorIcon:before,
+.errorIcon:after {
+    position: absolute;
+    left: 9.5px;
+    content: ' ';
+    height: 10px;
+    width: 2px;
+    background-color: #c5131c;
+    top: 5px;
+}
+.errorIcon:before {
+    transform: rotate(45deg);
+}
+.errorIcon:after {
+    transform: rotate(-45deg);
+}
+
+.checkboxField,
+.radioField {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    min-height: 32px;
+    margin-top: 10px;
+}
+
+.checkboxField a {
+    text-align: end;
+}
+
+.checkboxField label,
+.radioField label {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding: 0 10px 0 0;
+    width: 34.015%;
+}
+
+.checkboxWrapper,
+.radioWrapper {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.customCheckbox::before,
+.customCheckbox::after,
+.customRadio::after,
+.customRadio::before {
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-text-stroke: 0.1px;
+    font-size: 28px;
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 0;
+    line-height: 1;
+    content: '';
+    cursor: pointer;
+}
+
+.customRadio::before {
+    background: #fff;
+    border: 2px solid #bcd8db;
+    border-radius: 50%;
+}
+
+.customCheckbox::before {
+    background: #fff;
+    border: 2px solid #bcd8db;
+    border-radius: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+}
+
+.checkbox:focus-visible + .customCheckbox::before,
+.radio:focus-visible + .customRadio::before {
+    outline: 2px auto #5b8ad6;
+}
+
+@media only screen and (min-width: 768px) {
+    .customCheckbox:hover::before,
+    .checkbox:checked + .customCheckbox:hover::before,
+    .customRadio:hover::before,
+    .radio:checked + .customRadio:hover::before {
+        background: #fdc92a;
+        border: #fdc92a 2px solid;
+    }
+}
+
+.checkbox:checked + .customCheckbox::before,
+.radio:checked + .customRadio::before {
+    background: #ff5f00;
+    border: #ff5f00 2px solid;
+}
+
+.checkbox:checked + .customCheckbox::after {
+    font-size: 0;
+    left: 11px;
+    content: '';
+    width: 7px;
+    height: 14px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translateY(-50%) rotate(45deg);
+    top: 8px;
+}
+
+.radio:checked + .customRadio::after {
+    font-size: 0;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    background: #ff5f00;
+    border: #fff 2px solid;
+    border-radius: 50%;
+    top: 50%;
+    bottom: 50%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .radio:checked + .customRadio:hover::after {
+        background: #fdc92a;
+        border: #512b2b 2px solid;
+    }
+
+    .checkbox:checked + .customCheckbox:hover::after {
+        font-size: 0;
+        left: 11px;
+        content: '';
+        width: 7px;
+        height: 14px;
+        border: solid #512b2b;
+        border-width: 0 2px 2px 0;
+        transform: translateY(-50%) rotate(45deg);
+        top: 8px;
+    }
+}
+
+.select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='dropdown.-traingle' d='m8.7174 15.485h10.804l-5.4022 9.6601z' stroke-width='1.5764'/%3E%3Cpath d='m19.632 11.771h-10.804l5.4022-9.6601z' stroke-width='1.5764'/%3E%3C/svg%3E");
+    background-size: 18px 18px;
+    background-position: right -20px center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: var(--ui-font-family-body);
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+    padding: 13px 30px 13px 10px;
+    height: 46px;
+    border: 1px solid #bcd8db;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #512b2b;
+    margin-top: 5px;
+    background-color: #fff;
+}
+
+.select:focus-visible {
+    outline: 2px auto #5b8ad6;
+}
